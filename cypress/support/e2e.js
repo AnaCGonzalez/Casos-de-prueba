@@ -19,5 +19,8 @@ import './commands'
 // Import plugins Tab
 require('cypress-plugin-tab')
 
+// Import plugins File
+import 'cypress-file-upload';
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

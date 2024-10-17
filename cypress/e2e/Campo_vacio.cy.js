@@ -26,7 +26,7 @@ describe("Campos vacios", () => {
     cy.get("#category_id").select("4");
     cy.get("#class_type").select("ftf");
     cy.get("#class_capacity").type("15");
-    cy.get("#start_date").clear().type("20-10-2024").tab().type("07:15").tab().type('45');
+    cy.get("#start_date").clear().type("20-10-2024").type("{enter}").tab().type("07:15").type("{enter}").tab().type('45');
 
     // Guardar
     cy.contains("button", "Guardar").click();

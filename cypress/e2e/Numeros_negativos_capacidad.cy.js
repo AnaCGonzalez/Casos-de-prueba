@@ -10,30 +10,24 @@ describe("Todos los campos obligatorios", () => {
       cy.wait(5000)
     });
   
-    it("Campos obligatorios", () => {
+    it("Todos los campos obligatorios", () => {
       // Navegar a la sección de clases y crear una nueva clase
       cy.get('a[href="#/fitness-classes"]').click();
       cy.get('a[href="#/fitness-classes/planning/"]').click();
       cy.get('a[href="#/fitness-classes/planning/create"]').click();
-
+  
       // Llenar todos los campos obligatorios
-      cy.get("#class_name").type("Zumba");
-      cy.get("#branch_id").select("1");
-      cy.get("#coach_id").select("30");
-      cy.get(".el-select__input").type("PRUEBA LAYOUT").then(() => {
-          cy.get(".el-select-dropdown__item").contains("PRUEBA LAYOUT").click();
+      cy.get("#class_name").type("Barre Avanzado");
+      cy.get("#branch_id").select("2");
+      cy.get("#coach_id").select("9");
+      cy.get(".el-select__input").type("Barre").then(() => {
+          cy.get(".el-select-dropdown__item").contains("Barre").click();
         });
-      cy.get("#category_id").select("24");
+      cy.get("#category_id").select("5");
       cy.get("#class_type").select("ftf");
-      cy.get("#class_capacity").type("18");
-      cy.get("#start_date").clear().type("26-10-2024").type("{enter}").tab().type("09:30").type("{enter}").tab().type("45");
-      
-      //Checkbox Fecha/Hora publicación
-      cy.contains('label.custom-control-label', 'Fecha/Hora Publicación').click();
-      cy.wait(2000);
-      cy.contains('label.custom-control-label', 'Fecha/Hora Publicación').click();
-      cy.wait(1000); 
-      
+      cy.get("#class_capacity").type("-8");
+      cy.get("#start_date").clear().type("19-10-2024").type("{enter}").tab().type("18:00").type("{enter}").tab().type('50');
+  
       // Guardar
       cy.contains("button", "Guardar").click();
     });

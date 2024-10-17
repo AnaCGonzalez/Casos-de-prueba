@@ -26,7 +26,7 @@ describe("Todos los campos obligatorios", () => {
     cy.get("#category_id").select("31");
     cy.get("#class_type").select("online");
     cy.get("#class_capacity").type("5");
-    cy.get("#start_date").clear().type("19-10-2024").tab().type("10:30").tab().type('15');
+    cy.get("#start_date").clear().type("19-10-2024").type("{enter}").tab().type("10:30").type("{enter}").tab().type('15');
 
     // Guardar
     cy.contains("button", "Guardar").click();
